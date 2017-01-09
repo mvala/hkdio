@@ -27,3 +27,17 @@
 *.exe
 *.out
 *.app
+
+# VS
+.vscode/*
+!.vscode/*.json
+
+# Project specific
+pars
+build
+*.root
+share
+bin
+lib
+lib64
+include

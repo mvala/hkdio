@@ -1,0 +1,10 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    // The full path of the clang-format executable.
+    "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+
+    // Enable clang-format on save.
+    "C_Cpp.clang_format_formatOnSave": true,
+
+    "editor.formatOnType": false
+}
