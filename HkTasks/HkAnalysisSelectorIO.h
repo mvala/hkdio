@@ -35,6 +35,7 @@ public:
 private:
   /// Pointer to the analyzed TTree or TChain
   TTree *fChain; //!
+  TString fOutDir;
 
   HkEvent *fEvent; ///< Current Event
   TH1D *fHistPx;   ///< px distribution

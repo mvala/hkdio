@@ -10,8 +10,8 @@ ClassImp(HkAnalysisSelectorIO);
 /// \endcond
 
 HkAnalysisSelectorIO::HkAnalysisSelectorIO(TTree * /*tree*/)
-    : TSelector(), fChain(0), fEvent(0), fHistPx(0), fHistPy(0), fHistPz(0),
-      fHistPxPy(0) {
+    : TSelector(), fChain(0), fOutDir("Histograms.root"), fEvent(0), fHistPx(0),
+      fHistPy(0), fHistPz(0), fHistPxPy(0) {
   ///
   /// Default constructor
   ///
@@ -114,6 +114,15 @@ void HkAnalysisSelectorIO::Terminate() {
     fHistPz->Draw();
     c->cd(4);
     fHistPxPy->Draw();
+
+    TFile *f = TFile::Open(fOutDir.Data(), "RECREATE");
+    if (!f)
+      return;
+    fHistPx->Write();
+    fHistPy->Write();
+    fHistPz->Write();
+    fHistPxPy->Write();
+    f->Close();
   }
 }
 
