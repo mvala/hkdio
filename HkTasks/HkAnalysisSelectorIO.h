@@ -32,10 +32,12 @@ public:
   virtual void SlaveTerminate();
   virtual void Terminate();
 
+  void SetOutFileName(const char *out) { fOutFileName = out; }
+
 private:
   /// Pointer to the analyzed TTree or TChain
   TTree *fChain; //!
-  TString fOutDir;
+  TString fOutFileName;
 
   HkEvent *fEvent; ///< Current Event
   TH1D *fHistPx;   ///< px distribution
